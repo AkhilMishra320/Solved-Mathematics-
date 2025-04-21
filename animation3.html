@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum Wave Animation</title>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Pendulum Wave Motion</h2>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const pendulums = [];
+        const numPendulums = 15;
+
+        class Pendulum {
+            constructor(index) {
+                this.index = index;
+                this.length = 150 + index * 10;
+                this.angle = Math.PI / 4;
+                this.omega = 0;
+                this.alpha = 0;
+                this.gravity = 0.1;
+                this.damping = 0.999;
+            }
+
+            update() {
+                this.alpha = (-this.gravity / this.length) * Math.sin(this.angle);
+                this.omega += this.alpha;
+                this.omega *= this.damping;
+                this.angle += this.omega;
+            }
+
+            draw() {
+                const x = canvas.width / 2 + this.length * Math.sin(this.angle);
+                const y = 100 + this.length * Math.cos(this.angle);
+
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 2, 100);
+                ctx.lineTo(x, y);
+                ctx.strokeStyle = "white";
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(x, y, 8, 0, Math.PI * 2);
+                ctx.fillStyle = `hsl(${this.index * 20}, 100%, 50%)`;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < numPendulums; i++) {
+                pendulums.push(new Pendulum(i));
+            }
+            animate();
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let pendulum of pendulums) {
+                pendulum.update();
+                pendulum.draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        init();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Questions</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 10px 0;
+            width: 150px;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Matrix Questions</h2>
+    <div id="matrix-questions"></div>
+
+    <script>
+        // 10 predefined matrix questions
+        let questions = [
+            "Find the rank and nullity of the  matrix:",
+            "Find the Normal form (Cononical form)given matrix:",
+            "Find the non-singular matrices P and Q such that PAQ is in the normal form where:",
+            "Find Inverse by identity method :",
+            "Verify Cayley-Hamilton theorem :",
+            "Find the characteristics equation of the matrix and hence A inverse:",
+            "Find the eigen of the given matrix:",
+            "Find the eigenvalues and eigen vector of the given matrix:",
+            "Find diagonalization of matrix and hence evaluate A⁴:",
+            "Find the trace of the given matrix:"
+        ];
+
+        // Sample 3x3 matrix
+        function generateMatrix() {
+            let matrix = "<table>";
+            for (let i = 0; i < 3; i++) {
+                matrix += "<tr>";
+                for (let j = 0; j < 3; j++) {
+                    matrix += `<td>${Math.floor(Math.random() * 10)}</td>`; // Random number 0-9
+                }
+                matrix += "</tr>";
+            }
+            matrix += "</table>";
+            return matrix;
+        }
+
+        // Display 10 matrix questions
+        let container = document.getElementById("matrix-questions");
+        for (let i = 0; i < 10; i++) {
+            container.innerHTML += `<h3>Question ${i + 1}: ${questions[i]}</h3>` + generateMatrix();
+        }
+    </script>
+
+</body>
+</html>

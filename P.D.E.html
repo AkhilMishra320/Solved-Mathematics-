@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.D.E.1 Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .question-box {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .question-box:hover {
+            background-color: #e0e0e0;
+        }
+        .answer {
+            display: none;
+            background: #d9fdd3;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        /* Full-screen overlay style */
+        #fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #fullscreen-overlay img {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        #close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: red;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ordinary Differential Equation 1</h2>
+    <h3>Leibnitz Linear Differential Equations Questions</h3>
+
+    <div class="question-box" onclick="toggleAnswer(1)">
+        <p><b>1.</b> Solve (1+y²)dx = (tan⁻¹ y - x) dy.</p>
+        <div id="answer1" class="answer">
+            Answer: 
+            <img src="wrong.jpg" alt="Solution Image" onclick="openFullScreen(this.src)">
+        </div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(2)">
+        <p><b>2.</b> Solve sin(2x) dy/dx = y + tan(x).</p>
+        <div id="answer2" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <!-- More questions can be added here -->
+
+    <!-- Full-screen image overlay -->
+    <div id="fullscreen-overlay">
+        <span id="close-btn" onclick="closeFullScreen()">X</span>
+        <img id="fullscreen-img" src="" alt="Full-Screen Image">
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById("answer" + id);
+            answer.style.display = answer.style.display === "none" ? "block" : "none";
+        }
+
+        function openFullScreen(imgSrc) {
+            document.getElementById("fullscreen-img").src = imgSrc;
+            document.getElementById("fullscreen-overlay").style.display = "flex";
+        }
+
+        function closeFullScreen() {
+            document.getElementById("fullscreen-overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

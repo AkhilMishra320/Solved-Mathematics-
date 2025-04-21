@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Converter</title>
+    <link rel="stylesheet" href="binary.css">
+</head>
+<body>
+
+    <header>
+        <h1>Number System Converter</h1>
+        <a href="index.html" class="back-button">🔙 Back to Home</a>
+    </header>
+
+    <section class="converter">
+        <label for="inputNumber">Enter Number:</label>
+        <input type="text" id="inputNumber" placeholder="Enter a number">
+
+        <label for="conversionType">Select Conversion:</label>
+        <select id="conversionType">
+            <option value="binToDec">Binary → Decimal</option>
+            <option value="decToBin">Decimal → Binary</option>
+            <option value="decToHex">Decimal → Hexadecimal</option>
+            <option value="hexToDec">Hexadecimal → Decimal</option>
+            <option value="binToHex">Binary → Hexadecimal</option>
+            <option value="hexToBin">Hexadecimal → Binary</option>
+        </select>
+
+        <button onclick="convertNumber()">Convert</button>
+        
+        <p id="result">Result: <span id="output">--</span></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Multi-Tool Website</p>
+    </footer>
+
+    <script src="binary.js"></script>
+
+</body>
+</html>

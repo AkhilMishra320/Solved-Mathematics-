@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit as a Sum Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .question-box {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .question-box:hover {
+            background-color: #e0e0e0;
+        }
+        .answer {
+            display: none;
+            background: #d9fdd3;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Limit as a Sum Questions</h2>
+
+    <div class="question-box" onclick="toggleAnswer(1)">
+        <p><b>1.</b> Express the integral <br> 
+        ∫₀¹ x² dx as a limit of a sum.</p>
+        <div id="answer1" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(2)">
+        <p><b>2.</b> Convert the integral ∫₂⁵ (3x+1) dx into a Riemann sum.</p>
+        <div id="answer2" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(3)">
+        <p><b>3.</b> Write the integral ∫₋₁³ (x³ - 2) dx as a sum.</p>
+        <div id="answer3" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(4)">
+        <p><b>4.</b> Express ∫₁⁴ e^x dx as a sum.</p>
+        <div id="answer4" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(5)">
+        <p><b>5.</b> Convert the integral ∫₀π sin(x) dx into a sum.</p>
+        <div id="answer5" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(6)">
+        <p><b>6.</b> Express ∫₀¹ (x⁴ + x) dx as a sum.</p>
+        <div id="answer6" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(7)">
+        <p><b>7.</b> Convert ∫₂⁶ (1/x) dx into a limit as a sum.</p>
+        <div id="answer7" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(8)">
+        <p><b>8.</b> Express ∫₁³ (x² + 2x) dx as a Riemann sum.</p>
+        <div id="answer8" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(9)">
+        <p><b>9.</b> Convert ∫₋₂² (x³ - 4x) dx into a limit of a sum.</p>
+        <div id="answer9" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(10)">
+        <p><b>10.</b> Express ∫₀² (x² - x + 1) dx as a limit as a sum.</p>
+        <div id="answer10" class="answer">Answer: (To be added later)</div>
+    </div>
+
+
+
+
+
+
+
+
+    <h2>Summation Questions</h2>
+
+    <div class="question-box" onclick="toggleAnswer(1)">
+        <p><b>1.</b> Evaluate \sum_{i=1}^{n} i</p>
+        <div id="answer1" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(2)">
+        <p><b>2.</b> Find the sum of squares: \sum_{i=1}^{n} i^2</p>
+        <div id="answer2" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(3)">
+        <p><b>3.</b> Compute \sum_{i=1}^{n} (2i + 1)</p>
+        <div id="answer3" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(4)">
+        <p><b>4.</b> Evaluate \sum_{k=1}^{10} k^3</p>
+        <div id="answer4" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(5)">
+        <p><b>5.</b> Find the sum: \sum_{n=1}^{\infty} \frac{1}{n^2}</p>
+        <div id="answer5" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(6)">
+        <p><b>6.</b> Compute \sum_{j=1}^{m} j(j+1)</p>
+        <div id="answer6" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(7)">
+        <p><b>7.</b> Evaluate \sum_{i=1}^{5} (-1)^i i</p>
+        <div id="answer7" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(8)">
+        <p><b>8.</b> Find \sum_{n=1}^{\infty} \frac{1}{2^n}</p>
+        <div id="answer8" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(9)">
+        <p><b>9.</b> Evaluate \sum_{i=1}^{n} (i^2 + i)</p>
+        <div id="answer9" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <div class="question-box" onclick="toggleAnswer(10)">
+        <p><b>10.</b> Find \sum_{k=1}^{10} \frac{k}{k+1}</p>
+        <div id="answer10" class="answer">Answer: (To be added later)</div>
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById("answer" + id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById("answer" + id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
