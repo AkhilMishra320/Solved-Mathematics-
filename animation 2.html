@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Function Animation</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid white;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: lime;
+            color: black;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click a Function to Animate</h1>
+    <div class="buttons">
+        <button onclick="setFunction('sin')">Sin</button>
+        <button onclick="setFunction('cos')">Cos</button>
+        <button onclick="setFunction('tan')">Tan</button>
+        <button onclick="setFunction('cosec')">Cosec</button>
+        <button onclick="setFunction('sec')">Sec</button>
+        <button onclick="setFunction('cot')">Cot</button>
+        <button onclick="setFunction('log')">Log</button>
+        <button onclick="setFunction('exp')">e^x</button>
+        <button onclick="setFunction('power')">a^x</button>
+        <button onclick="setFunction('abs')">|x|</button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Set canvas size
+        canvas.width = window.innerWidth * 0.9;
+        canvas.height = 400;
+
+        let angle = 0;
+        let waveHeight = 100;
+        let waveLength = 20;
+        let speed = 0.05;
+        let selectedFunction = "sin"; // Default function
+        let a = 2; // Base for a^x function
+
+        function drawWave() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.beginPath();
+            ctx.strokeStyle = "lime";
+            ctx.lineWidth = 2;
+
+            for (let x = 1; x < canvas.width; x += 5) {
+                let y;
+                switch (selectedFunction) {
+                    case "sin": y = canvas.height / 2 + Math.sin(x / waveLength + angle) * waveHeight; break;
+                    case "cos": y = canvas.height / 2 + Math.cos(x / waveLength + angle) * waveHeight; break;
+                    case "tan": y = canvas.height / 2 + Math.tan(x / waveLength + angle) * waveHeight * 0.2; break;
+                    case "cosec": y = canvas.height / 2 + (1 / Math.sin(x / waveLength + angle)) * waveHeight * 0.1; break;
+                    case "sec": y = canvas.height / 2 + (1 / Math.cos(x / waveLength + angle)) * waveHeight * 0.1; break;
+                    case "cot": y = canvas.height / 2 + (1 / Math.tan(x / waveLength + angle)) * waveHeight * 0.1; break;
+                    case "log": y = canvas.height / 2 - Math.log(x + 1) * waveHeight * 0.1; break;
+                    case "exp": y = canvas.height / 2 - Math.exp((x - canvas.width / 2) * 0.01) * 10; break;
+                    case "power": y = canvas.height / 2 - Math.pow(a, (x - canvas.width / 2) * 0.01) * 10; break;
+                    case "abs": y = canvas.height / 2 - Math.abs(x - canvas.width / 2) * 0.05; break;
+                    default: y = canvas.height / 2;
+                }
+                ctx.lineTo(x, y);
+            }
+
+            ctx.stroke();
+            angle += speed;
+            requestAnimationFrame(drawWave);
+        }
+
+        function setFunction(func) {
+            selectedFunction = func;
+        }
+
+        drawWave();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourier Series Animation</title>
+    <style>
+        body {
+            text-align: center;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+            margin: auto;
+            background: black;
+        }
+        input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Fourier Series Visualization</h2>
+<p>Adjust number of terms to see the signal change</p>
+<label for="terms">Number of terms:</label>
+<input type="range" id="terms" min="1" max="50" value="5">
+<canvas id="canvas" width="600" height="300"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const termsSlider = document.getElementById("terms");
+
+    let terms = 5;
+    let time = 0;
+
+    termsSlider.addEventListener("input", () => {
+        terms = parseInt(termsSlider.value);
+    });
+
+    function drawFourierSeries() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = "cyan";
+        ctx.lineWidth = 2;
+
+        let xOffset = 100;
+        let yOffset = canvas.height / 2;
+        let scale = 50;
+        let points = [];
+
+        for (let x = 0; x < canvas.width - xOffset; x++) {
+            let sum = 0;
+            for (let n = 1; n <= terms; n += 2) {
+                sum += (4 / (n * Math.PI)) * Math.sin(n * (x + time) * 0.02);
+            }
+            points.push({ x: x + xOffset, y: yOffset - sum * scale });
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        points.forEach(p => ctx.lineTo(p.x, p.y));
+        ctx.stroke();
+
+        time += 2;
+        requestAnimationFrame(drawFourierSeries);
+    }
+
+    drawFourierSeries();
+</script>
+
+</body>
+</html>

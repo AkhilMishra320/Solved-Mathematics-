@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Self-Organizing Network</title>
+    <style>
+        body {
+            text-align: center;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid white;
+            background: black;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2>AI Self-Organizing Neural Network</h2>
+<p>Click to add data points and watch neurons adjust!</p>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let neurons = [];
+    let dataPoints = [];
+    const numNeurons = 10;
+    const learningRate = 0.05;
+
+    // Initialize neurons randomly
+    for (let i = 0; i < numNeurons; i++) {
+        neurons.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height
+        });
+    }
+
+    // Handle clicks to add data points
+    canvas.addEventListener("click", (event) => {
+        let x = event.offsetX;
+        let y = event.offsetY;
+        dataPoints.push({ x, y });
+
+        adjustNeurons();
+    });
+
+    function adjustNeurons() {
+        for (let dp of dataPoints) {
+            let closestNeuron = neurons.reduce((best, n) => {
+                let distBest = Math.hypot(best.x - dp.x, best.y - dp.y);
+                let distN = Math.hypot(n.x - dp.x, n.y - dp.y);
+                return distN < distBest ? n : best;
+            });
+
+            // Move the closest neuron slightly towards the data point
+            closestNeuron.x += (dp.x - closestNeuron.x) * learningRate;
+            closestNeuron.y += (dp.y - closestNeuron.y) * learningRate;
+        }
+        draw();
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw data points
+        dataPoints.forEach(p => {
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // Draw neurons
+        neurons.forEach(n => {
+            ctx.fillStyle = "cyan";
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // Draw neuron connections
+        ctx.strokeStyle = "cyan";
+        ctx.lineWidth = 1;
+        for (let i = 0; i < neurons.length - 1; i++) {
+            ctx.beginPath();
+            ctx.moveTo(neurons[i].x, neurons[i].y);
+            ctx.lineTo(neurons[i + 1].x, neurons[i + 1].y);
+            ctx.stroke();
+        }
+    }
+
+    draw();
+</script>
+
+</body>
+</html>

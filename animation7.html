@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Square Pattern</title>
+    <style>
+        body {
+            text-align: center;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+            margin: auto;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Vedic Square Pattern Visualization</h2>
+<p>Watch the beauty of Indian Mathematics!</p>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const size = 9; // 9x9 Vedic Square
+    const cellSize = canvas.width / size;
+    let angle = 0;
+
+    function vedicSquare(x, y) {
+        return ((x + 1) * (y + 1)) % 9 || 9; // Mod 9 multiplication table
+    }
+
+    function drawPattern() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                let value = vedicSquare(i, j);
+                let color = `hsl(${value * 40 + angle}, 100%, 50%)`;
+
+                ctx.fillStyle = color;
+                ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
+
+                ctx.fillStyle = "white";
+                ctx.font = "16px Arial";
+                ctx.fillText(value, i * cellSize + cellSize / 3, j * cellSize + cellSize / 1.5);
+            }
+        }
+
+        angle += 1; // Gradually shift colors
+        requestAnimationFrame(drawPattern);
+    }
+
+    drawPattern();
+</script>
+
+</body>
+</html>

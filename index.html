@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tool Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>
+        .sanskrit-text {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none; /* Text select hone se rokne ke liye */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header class="header">
+        <div class="logo">
+            <img src="subham.png" alt="Logo">
+            <div class="math-title">
+                
+                
+                <h1 class="glow-text">Mathematics</h1>
+                
+                <p id="sanskritText" class="sanskrit-text">गणितं सर्वेषां विद्यायाः मूलम्।</p>
+            </div>
+        </div>
+        <button class="menu-btn">☰</button>
+         
+
+    </header>
+    
+    
+  
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Media</a></li>
+            <li class="dropdown">
+                <a href="formula.html">Our Formula </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Algebra</a></li>
+                    <li><a href="#">Geometry</a></li>
+                </ul>
+            </li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="playquiz.html">Game</a></li>
+            <li><a href="official quiz.html">Quiz</a></li>
+            <li><a href="sign.html">Sign Up</a></li>
+            <li><a href="formula.html">formula</a></li>
+            <li><a href="animation.html">Animation</a></li>
+
+        </ul>
+    </nav>
+
+
+    
+    
+    
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Units</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ✅ Image Section (Click to Show Units) -->
+   
+    
+
+<img src="kanhaiy.jpg" alt="Website Image">
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Units</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Units</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2 class="title">Semester 1</h2>
+    <div class="unit-container">
+        <a href="calculus 1.html" class="unit">
+            <div class="icon">🧮</div>
+            <p>Calculus 1</p>
+        </a>
+
+        <a href="calculus 2.html" class="unit">
+            <div class="icon">📏</div>
+            <p>Calculus 2</p>
+        </a>
+
+        <a href="sequence.html" class="unit">
+            <div class="icon">📊</div>
+            <p>Sequence,Series</p>
+        </a>
+
+        <a href="vector space.html" class="unit">
+            <div class="icon">♾️</div>
+            <p>Vector Space</p>
+        </a>
+
+        <a href="Matrix.html" class="unit">
+            <div class="icon">🔢</div>
+            <p>Matrix</p>
+        </a>
+        
+        <h2 class="title">Semester 2</h2>
+        
+        <a href="O.D.E.1.html" class="unit">
+           <div class="icon">∂</div>
+           <p>O.D.E.1</p>
+        </a>
+    
+        <a href="O.D.E.2.html" class="unit">
+           <div class="icon">ƒ(x)</div>
+           <p>O.D.E.2 </p>
+        </a>
+    
+        <a href="pde.html" class="unit">
+           <div class="icon">∂/∂x </div>
+           <p>P.D.E </p>
+        </a>
+    
+        <a href="fcv.html" class="unit">
+           <div class="icon">ℂ</div>
+           <p>F.C.V</p>
+        </a>
+    
+        <a href="vector_calculus.html" class="unit">
+           <div class="icon">×∮</div>
+           <p>Vector Calculus</p>
+        </a>
+    </div>
+
+</body>
+</html>
+
+
+
+<div class="animated-text">Welcome to Mathematics World!</div>
+   
+
+        
+        <p>This website will offer educational resources, calculators, quizzes, and entertaining interactive games.</p>
+    </section
+    <!-- Footer -->
+    <footer>
+        <p>Mathematics not only subject,this is a dream</p>
+    </footer>
+
+    <script>
+        let textElement = document.getElementById("sanskritText");
+        let clickCount = 0;  // Click count track karne ke liye
+        let timeout;
+
+        textElement.addEventListener("click", function () {
+            clickCount++; 
+
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                if (clickCount === 1) {
+                    textElement.innerText = "गणित सभी विद्याओं की जड़ है।"; // Sanskrit → Hindi
+                } else if (clickCount === 2) {
+                    textElement.innerText = "Mathematics is the root of all sciences."; // Hindi → English
+                } else if (clickCount === 3) {
+                    textElement.innerText = "गणितं सर्वेषां विद्यायाः मूलम्।"; // English → Sanskrit
+                }
+                clickCount = 0; // Reset clicks
+            }, 250); // Short delay to detect multiple clicks
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+

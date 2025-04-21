@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Math Game</title>
+    <link rel="stylesheet" href="easygame.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Math Challenge</h1>
+        <p id="question"></p>
+        <input type="number" id="answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+        <p>Score: <span id="score">0</span></p>
+        <button onclick="newQuestion()">Next Question</button>
+    </div>
+    <script src="easygame.js"></script>
+</body>
+</html>

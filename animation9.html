@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Vector Field Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    let arrowGroup = new THREE.Group();
+    scene.add(arrowGroup);
+
+    function generateVectorField() {
+        arrowGroup.clear();
+        let gridSize = 10;
+        for (let x = -gridSize; x <= gridSize; x += 2) {
+            for (let y = -gridSize; y <= gridSize; y += 2) {
+                for (let z = -gridSize; z <= gridSize; z += 2) {
+                    let dir = new THREE.Vector3(-y, x, Math.sin(z / 2));  // Sample vector field
+                    dir.normalize();
+                    let arrow = new THREE.ArrowHelper(dir, new THREE.Vector3(x, y, z), 1.5, 0x00ffff);
+                    arrowGroup.add(arrow);
+                }
+            }
+        }
+    }
+
+    generateVectorField();
+
+    camera.position.z = 30;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        arrowGroup.rotation.y += 0.005;
+        renderer.render(scene, camera);
+    }
+
+    animate();
+</script>
+
+</body>
+</html>

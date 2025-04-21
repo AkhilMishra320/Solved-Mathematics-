@@ -1,0 +1,446 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: White;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    color: White;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.tool {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.tool:hover {
+    background-color: #0056b3;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+}
+
+.calculator {
+    width: 90%;
+    max-width: 400px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: white;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+}
+
+.calculator {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px;
+    width: 80%; /* Adjust width */
+}
+
+
+
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation Menu */
+nav {
+    display: none;
+    background: #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Dropdown */
+nav ul .dropdown {
+    display: none;
+    background: #444;
+    padding-left: 20px;
+}
+
+/* Show menu */
+nav.show {
+    display: block;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: black;
+}
+
+
+
+
+.calculators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.calculators button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calculators button:hover {
+    background-color: darkblue;
+}
+
+
+.navbar-title {
+    color: white;
+}
+.navbar-title {
+    text-shadow: 2px 2px 5px black;
+}
+.menu-icon {
+    font-size: 24px;
+    color: white;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; /* Ya jo bhi color ho */
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000; /* Taaki dusre elements ke neeche na chala jaye */
+}
+body {
+    padding-top: 60px; /* Header ki height ke barabar */
+}
+
+.nav-menu {
+    display: none;  /* By default hidden */
+}
+
+.nav-menu.active {
+    display: block;  /* Jab 'active' class add ho tab dikhaye */
+}
+
+
+/* Navigation Bar Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 10px 20px;
+    color: white;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: none;  /* Initially hidden */
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.nav-menu.active {
+    display: block; /* Show when active class is added */
+}
+
+.nav-menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+body {
+    background: linear-gradient(45deg, #1e1e1e, #2a2a2a, #3a3a3a);
+    animation: gradientAnimation 5s infinite alternate;
+}
+@keyframes gradientAnimation {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+
+
+
+h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+}
+
+
+
+
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+
+
+
+.math-title {
+    display: flex;
+    flex-direction: column; /* टेक्स्ट को ऊपर-नीचे लाने के लिए */
+    align-items: center; /* सारा कंटेंट सेंटर में रहेगा */
+    text-align: center;
+}
+
+.sanskrit-text {
+    font-size: 12px; /* छोटा फॉन्ट */
+    font-style: italic; /* हल्का झुका हुआ */
+    color: #ccc; /* हल्का ग्रे रंग */
+    margin-top: -5px; /* ऊपर लाने के लिए */
+}
+
+
+
+
+
+
+
+
+
+
+
+.sanskrit-text {
+    font-size: 20px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    font-style: italic; /* Italic style for better look */
+    margin-top: 5px; /* Space above */
+}
+
+
+
+
+
+
+
+
+
+
+html, body {
+    min-height: 290vh; /* Ensures body takes at least full viewport height */
+    height: auto; /* Allows body to grow automatically */
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.unit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.unit {
+    width: 250%;
+    max-width: 800px;
+    background-color: wheat;;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.unit:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    font-size: 30px;
+    background-color: rgba(255, 165, 0, 0.2);
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+
+
+
+

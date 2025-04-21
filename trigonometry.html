@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigonometry Formulas</title>
+    <link rel="stylesheet" href="trigonometry.css">
+</head>
+<body>
+    <header>
+        <h1>Trigonometry Formulas</h1>
+        <a href="index.html">🔙 Back to Home</a>
+    </header>
+
+    <section class="formulas">
+        <button onclick="showProof(1)">sin²θ + cos²θ = 1</button>
+        <button onclick="showProof(2)">1 + tan²θ = sec²θ</button>
+        <button onclick="showProof(3)">1 + cot²θ = csc²θ</button>
+        <button onclick="showProof(4)">sin(2θ) = 2sinθcosθ</button>
+        <button onclick="showProof(5)">cos2ø=2cos²ø-1</button>
+        <button onclick="showProof(6)">cos(2ø)=1-2sin²ø</button>
+        <button onclick="showProof(7)">tan(2ó)=sin2ó/1-2sin²ó or sin2ó/2cos²ó-1</button>
+        <button onclick="showProof(8)">cot(2ø)=1-2sin²ø/cos2ø or 2cos²ø-1/</button>
+    </section>
+
+    <div id="proof-container">
+        <h2>Proof:</h2>
+        <p id="proof-text">Click on a formula to see its proof.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Mathematics Quiz</p>
+    </footer>
+
+    <script src="trigonometry.js"></script>
+</body>
+</html>
